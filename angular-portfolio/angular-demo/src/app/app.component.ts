@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import {ProjectsComponent} from "./components/projects/projects.component";
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { AboutComponent } from './components/about/about.component';
 
 @Component({
   selector: 'app-root-christy',
   standalone: true,
-  imports: [RouterOutlet, ProjectsComponent, NavbarComponent, ProfileComponent],
+  imports: [RouterOutlet, ProjectsComponent, NavbarComponent, ProfileComponent, AboutComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
