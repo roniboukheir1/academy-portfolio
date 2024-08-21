@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-about',
@@ -9,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AboutComponent {
 
+  @Input() details: {experience : string; education: string} = {experience: '', education: ''};
+  @Output() detailClicked = new EventEmitter<string>();
+
+  onDetailClicked(detailType : string) {
+    this.detailClicked.emit(detailType);
+  }
 }
