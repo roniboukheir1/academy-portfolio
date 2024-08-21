@@ -22,12 +22,12 @@ export class ProjectService {
   }
 
   //TODO Homework convert any into the right interface
-  getFilteredProject(filters?: any): Observable<IProject[]> {
+  getFilteredProject(filters?: IProjectFilter ): Observable<IProject[]> {
     //Tip: try adding 'console.log(filters)' here to observe how the data being passed OnInit is different than the data being passed when we have a filter
     return this._httpClient.get<IProject[]>('https://my-json-server.typicode.com/christyantoun/frontend-session/projects',
       {
         params: {
-          categoryIds: filters ?? []
+          categoryIds: filters?.categoryIds ?? []
         }
       });
   }

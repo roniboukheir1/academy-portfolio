@@ -1,0 +1,3 @@
+interface IProjectFilter {
+    categoryIds: number[];
+  }
