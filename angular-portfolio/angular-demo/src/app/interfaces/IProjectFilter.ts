@@ -1,3 +1,3 @@
-interface IProjectFilter {
+export interface IProjectFilter {
     categoryIds: number[];
   }

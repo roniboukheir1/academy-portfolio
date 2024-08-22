@@ -4,6 +4,7 @@ import {ProjectsComponent} from "./components/projects/projects.component";
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AboutComponent } from './components/about/about.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root-christy',
@@ -14,6 +15,9 @@ import { AboutComponent } from './components/about/about.component';
 })
 export class AppComponent {
   title = 'angular-demo';
+
+  constructor(private http : HttpClient){}
+
   aboutDetails = {
     experience: '4+ years Web Development',
     education: 'B.Sc. Bachelors Degree\nUniversity Name'
@@ -22,4 +26,11 @@ export class AppComponent {
   onDetailSelected(detailType: string) {
     console.log(`${detailType} detail was clicked!`);
   }
+
+
+  callApiHandler(){
+    this.http.get("https://www.example.com").subscribe((res) => {});
+  }
+
+
 }

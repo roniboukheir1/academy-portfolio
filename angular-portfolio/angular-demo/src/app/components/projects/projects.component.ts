@@ -43,21 +43,21 @@ export class ProjectsComponent implements OnInit {
 
   //** we've added the project fetching as its own function so we can reuse it multiple times within the same component
   //** check for when the getProjects( )  function is being used in this file
-  getProjects(filters?: number[]){
-    this._projectService.getFilteredProject(filters).subscribe({
-      next: (value) => {
-        //** the below code maps the keys from the categoryId to their respective values so that we can show what the category name is in the UI instead of just the categoryId as number
-        this.projects = value.map(project => ({
-          ...project,
-          categories: project.categoryIds.map(id =>
-            this.categories.find(category => category.id === id)!
-          )
-        }));
-      }
-    })
-  }
+    getProjects(filters?: any){
+      this._projectService.getFilteredProject(filters).subscribe({
+        next: (value) => {
+          //** the below code maps the keys from the categoryId to their respective values so that we can show what the category name is in the UI instead of just the categoryId as number
+          this.projects = value.map(project => ({
+            ...project,
+            categories: project.categoryIds.map(id =>
+              this.categories.find(category => category.id === id)!
+            )
+          }));
+        }
+      })
+    }
 
-  onSelectChange(selection: ICategory[]) {
-    this.getProjects(selection.map(selectionEntry => selectionEntry.id));
+    onSelectChange(selection: ICategory[]) {
+      this.getProjects(selection.map(selectionEntry => selectionEntry.id));
+    }
   }
-}

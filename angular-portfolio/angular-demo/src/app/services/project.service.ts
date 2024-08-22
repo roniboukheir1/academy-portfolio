@@ -3,6 +3,7 @@ import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {IProject} from "../interfaces/project";
 import {ICategory} from "../interfaces/category";
+import {IProjectFilter} from "../interfaces/IProjectFilter";
 
 @Injectable({
   providedIn: 'root'
